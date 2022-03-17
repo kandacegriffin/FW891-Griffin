@@ -67,3 +67,18 @@ plot(plot11)
 #2. ~1 hr - mostly messing with the mapping and axes
 #3. before I've seen the mapping / aes called in the ggplot() line - how does it differ this way? is one preferred?
 #4. adding line segments; stroke sub-component
+
+
+### play with unicode
+plot12 <- ggplot( data = weatherData ) +
+  geom_point(mapping = aes(x = windSpeed, y = tempDept, size = precip2, 
+                           color = windDir, shape = season)) +
+  labs( title = "Wind Speed vs. Temp Deviation From Average \U1F498	",
+        subtitle = "Lansing, MI -- 2016",
+        x = "Wind Speed (mph) \U1A49",
+        y = "Temp Deviation From Average (Fahrenheit)",
+        size = "Precipitation",
+        color = "Wind Direction",
+        shape = "Season")
+plot(plot12)
+
