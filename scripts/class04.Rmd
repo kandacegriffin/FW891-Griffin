@@ -1,0 +1,33 @@
+---
+title: "class04"
+author: "Kandace Griffin"
+date: "2/3/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE, cache = FALSE}
+require("knitr") 
+## setting working directory
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+```
+
+<!-- Runs the code but does not output to the document (include=FALSE) -->
+```{r include=FALSE}
+source(file="scripts/app04.R")
+```
+
+### Sea Lamprey water depth on spawning migration in the **White River, Michigan** 2021.
+
+We had `r length(unique(positions$tag_id))` fish tracks through the White River. A subset of `r length(unique(press$tag_id))` fish were tagged with pressure tags to determine fish depth. Sea lamprey were a maximum `r max(press$fish_height_uncalibrated)` meters above the river bottom.
+
+#### Sea lamprey height off bottom vs. water depth
+```{r echo=FALSE}
+plot(plot1)
+```
+
+#### Sea lamprey height off bottom by sex
+```{r echo=FALSE}
+plot(plot4)
+```
+***
+Visit the [GLFC website](http://www.glfc.org/control.php) to find out more about efforts to control sea lamprey in the Great Lakes.
